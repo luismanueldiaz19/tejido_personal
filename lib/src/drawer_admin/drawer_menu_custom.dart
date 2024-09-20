@@ -8,7 +8,7 @@ import 'package:tejidos/src/nivel_2/folder_insidensia/home_incidencia_resuelto.d
 import 'package:tejidos/src/nivel_2/folder_insidensia/pages_insidencia.dart/add_incidencia_out.dart';
 import 'package:tejidos/src/nivel_2/folder_planificacion/screen_planificacion_semanal.dart';
 import 'package:tejidos/src/nivel_2/folder_reception/historia_record/list_report_intput_output.dart';
-import 'package:tejidos/src/pages/sign_in/sign_in_login.dart';
+import 'package:tejidos/src/screens/sign_in_login.dart';
 import 'package:tejidos/src/screen_admin/screen_users_admin.dart';
 import 'package:tejidos/src/util/commo_pallete.dart';
 import '../folder_cliente_company/add_cliente.dart';

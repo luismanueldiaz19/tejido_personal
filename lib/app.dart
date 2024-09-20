@@ -12,6 +12,8 @@ import 'src/nivel_2/folder_bordado/provider/provider_bordado_tirada.dart';
 import 'src/nivel_2/folder_planificacion/provider_planificacion_services.dart';
 import 'src/nivel_2/folder_satreria/provider/provider_sastreria.dart';
 import 'src/nivel_2/folder_serigrafia/provider/provider_serigrafia.dart';
+import 'src/router.dart';
+import 'src/screens/register_new_user.dart';
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -37,7 +39,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ProviderBordadoTirada()),
         ChangeNotifierProvider(create: (_) => ProviderSastreria()),
         ChangeNotifierProvider(create: (_) => ProviderSerigrafia()),
-      
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
           color: const Color.fromARGB(255, 233, 234, 238),
           theme: ThemeData(
               useMaterial3: true,
-              primarySwatch: Colors.blue,
+              primarySwatch: Colors.red,
               scaffoldBackgroundColor: const Color.fromARGB(255, 233, 234, 238),
               buttonTheme: ButtonThemeData(
                   shape: RoundedRectangleBorder(
@@ -69,7 +70,9 @@ class MyApp extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   titleTextStyle: Theme.of(context).textTheme.bodyLarge,
                   elevation: 0)),
-          home: const ScreenSplash()),
+          initialRoute: Routes.login,
+          onGenerateRoute: Routes.generateRoute,
+          themeMode: ThemeMode.system),
     );
   }
 }

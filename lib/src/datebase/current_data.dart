@@ -108,13 +108,6 @@ EmpresaLocal currentEmpresa = EmpresaLocal(
 
 // tbsyomsyaasinjnjyeyye
 
-bool isNewVersionAvailable(int newVersion) {
-  // Lógica para comparar las versiones y determinar si hay una nueva versión disponible
-  // Puedes usar paquetes como 'version' para facilitar esta comparación
-  // Aquí se realiza una comparación simple, asegúrate de ajustar según tus necesidades.
-  return versionApp != newVersion ? true : false;
-}
-
 String obtenerSistemaOperativo() {
   if (Platform.isAndroid) {
     return 'Android';
@@ -133,7 +126,7 @@ String obtenerSistemaOperativo() {
 
 Widget identy(context) => Padding(
       padding: const EdgeInsets.only(bottom: 40, top: 25),
-      child: Text("©$nameApp Created by LuDeveloper",
+      child: Text("©created by LuDeveloper",
           style: Theme.of(context).textTheme.bodySmall,
           textAlign: TextAlign.center),
     );
