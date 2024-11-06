@@ -14,7 +14,7 @@ class Users {
     this.created,
     this.turn,
     this.code,
-    this.type,
+    this.type = '0',
     this.statu,
   });
 

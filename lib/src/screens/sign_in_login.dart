@@ -1,10 +1,12 @@
 import 'dart:convert';
 
 import 'package:animate_do/animate_do.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tejidos/src/datebase/current_data.dart';
+import 'package:tejidos/src/home.dart';
 import 'package:tejidos/src/util/commo_pallete.dart';
 
 import '../datebase/url.dart';
@@ -20,8 +22,9 @@ class SignInLogin extends StatefulWidget {
 }
 
 class _SignInLoginState extends State<SignInLogin> {
-  TextEditingController usuarioController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController usuarioController = TextEditingController(text: '1995');
+  TextEditingController passwordController =
+      TextEditingController(text: 'tygatyga');
 
   ApiService apiService = ApiService();
 
@@ -43,13 +46,18 @@ class _SignInLoginState extends State<SignInLogin> {
         if (data['success']) {
           print('data json : ${data}');
 
-          NewUsers usuario = newUsersFromJson(response);
+          userLogged = newUsersFromJson(response);
 
-          print('usuario de la class :${usuario.usuario?.toJson()}');
-          print('Total de Permiso :${usuario.permisos?.length}');
+          print('usuario de la class :${userLogged.usuario?.toJson()}');
+          print('Total de Permiso :${userLogged.permisos?.length}');
           // Mostrar mensaje de éxito
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(data['message']), backgroundColor: Colors.green));
+
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const MyHomePage()),
+              (route) => false);
         } else {
           print(data['message']);
           // Mostrar mensaje de error

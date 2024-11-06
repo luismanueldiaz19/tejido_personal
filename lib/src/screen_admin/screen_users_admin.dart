@@ -3,21 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tejidos/src/datebase/current_data.dart';
 import 'package:tejidos/src/model/users.dart';
-import 'package:tejidos/src/screen_admin/add_user.dart';
 import 'package:tejidos/src/screen_admin/provider_user/services_provider_users.dart';
 import 'package:tejidos/src/util/commo_pallete.dart';
 import 'package:tejidos/src/util/font_style.dart';
 import 'package:tejidos/src/widgets/custom_app_bar.dart';
 import 'package:tejidos/src/util/dialog_confimarcion.dart';
 
-import '../widgets/button_drawer.dart';
-
 const colorShadow = Color.fromARGB(255, 216, 195, 146);
 const colorBackGroud = Color(0xffD3D4D4);
 const colorMainText = Color(0xff182249);
 
 class ScreenUsersAdmin extends StatefulWidget {
-  const ScreenUsersAdmin({Key? key}) : super(key: key);
+  const ScreenUsersAdmin({super.key});
 
   @override
   State<ScreenUsersAdmin> createState() => _ScreenUsersAdminState();
@@ -50,7 +47,7 @@ class _ScreenUsersAdminState extends State<ScreenUsersAdmin> {
                   child: Row(
                     children: [
                       const SizedBox(width: 25),
-                      PanelRightUserAdmin(size: size),
+                      // PanelRightUserAdmin(size: size),
                       const SizedBox(width: 25),
                       TopMainUsers(size: size),
                     ],
@@ -525,134 +522,134 @@ class _TopMainUsersState extends State<TopMainUsers> {
 
 const colorTextt = Color(0xff929C9C);
 
-class PanelRightUserAdmin extends StatelessWidget {
-  const PanelRightUserAdmin({
-    super.key,
-    required this.size,
-  });
+// class PanelRightUserAdmin extends StatelessWidget {
+//   const PanelRightUserAdmin({
+//     super.key,
+//     required this.size,
+//   });
 
-  final Size size;
+//   final Size size;
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: size.height / 1.3,
-      width: 200,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(7.0),
-        gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0xffEAEBEB),
-            // Color.fromARGB(255, 160, 172, 168),
-            Color(0xffEAEBEB)
-          ],
-        ),
-        // boxShadow: const [
-        //   BoxShadow(
-        //     color: colorShadow,
-        //     blurRadius: 15.0,
-        //     offset: Offset(0.0, 5.0),
-        //   ),
-        // ],
-      ),
-      child: Column(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
-            margin: const EdgeInsets.all(15),
-            padding: const EdgeInsets.all(5.0),
-            child: Image.asset(
-              'assets/logo_app.png',
-              height: 80,
-              width: 150,
-            ),
-          ),
-          const SizedBox(height: 20),
-          ButtonDrawer(
-            icon: Icons.add,
-            colorIcon: colorsBlueDeepHigh,
-            text: 'Add Empleado',
-            colorText: colorsBlueDeepHigh,
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (conext) => const AddUser(),
-                ),
-              );
-            },
-          ),
-          ButtonDrawer(
-            icon: Icons.add,
-            colorIcon: colorTextt,
-            text: 'Add Falta Empl.',
-            colorText: colorTextt,
-            press: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (conext) => const AddUser(),
-              //   ),
-              // );
-            },
-          ),
-          ButtonDrawer(
-            icon: Icons.warning_amber_rounded,
-            colorIcon: colorTextt,
-            text: 'Falta Empleado',
-            colorText: colorTextt,
-            press: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (conext) => const AddIncidenciaOut(),
-              //   ),
-              // );
-            },
-          ),
-          ButtonDrawer(
-            icon: Icons.list_alt_outlined,
-            colorIcon: colorTextt,
-            text: 'Reglamentos',
-            colorText: colorTextt,
-            press: () {},
-          ),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30),
-            child: Column(
-              children: [
-                TextButton.icon(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.arrow_back, color: Colors.black),
-                    label: const Text(
-                      'Ir Hacia Atra',
-                      style: TextStyle(color: Colors.black),
-                    )),
-                Padding(
-                  padding: const EdgeInsets.only(top: 2),
-                  child: Text(
-                    '@LuDeveloper',
-                    style: TextStyle(
-                      fontFamily: fontBalooPaaji,
-                      fontSize: 11,
-                      color: colorTextt,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: size.height / 1.3,
+//       width: 200,
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(7.0),
+//         gradient: const LinearGradient(
+//           begin: Alignment.topLeft,
+//           end: Alignment.bottomRight,
+//           colors: [
+//             Color(0xffEAEBEB),
+//             // Color.fromARGB(255, 160, 172, 168),
+//             Color(0xffEAEBEB)
+//           ],
+//         ),
+//         // boxShadow: const [
+//         //   BoxShadow(
+//         //     color: colorShadow,
+//         //     blurRadius: 15.0,
+//         //     offset: Offset(0.0, 5.0),
+//         //   ),
+//         // ],
+//       ),
+//       child: Column(
+//         children: [
+//           Container(
+//             decoration: BoxDecoration(
+//                 color: Colors.white, borderRadius: BorderRadius.circular(10.0)),
+//             margin: const EdgeInsets.all(15),
+//             padding: const EdgeInsets.all(5.0),
+//             child: Image.asset(
+//               'assets/logo_app.png',
+//               height: 80,
+//               width: 150,
+//             ),
+//           ),
+//           const SizedBox(height: 20),
+//           ButtonDrawer(
+//             icon: Icons.add,
+//             colorIcon: colorsBlueDeepHigh,
+//             text: 'Add Empleado',
+//             colorText: colorsBlueDeepHigh,
+//             press: () {
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                   builder: (conext) => const AddUser(),
+//                 ),
+//               );
+//             },
+//           ),
+//           ButtonDrawer(
+//             icon: Icons.add,
+//             colorIcon: colorTextt,
+//             text: 'Add Falta Empl.',
+//             colorText: colorTextt,
+//             press: () {
+//               // Navigator.push(
+//               //   context,
+//               //   MaterialPageRoute(
+//               //     builder: (conext) => const AddUser(),
+//               //   ),
+//               // );
+//             },
+//           ),
+//           ButtonDrawer(
+//             icon: Icons.warning_amber_rounded,
+//             colorIcon: colorTextt,
+//             text: 'Falta Empleado',
+//             colorText: colorTextt,
+//             press: () {
+//               // Navigator.push(
+//               //   context,
+//               //   MaterialPageRoute(
+//               //     builder: (conext) => const AddIncidenciaOut(),
+//               //   ),
+//               // );
+//             },
+//           ),
+//           ButtonDrawer(
+//             icon: Icons.list_alt_outlined,
+//             colorIcon: colorTextt,
+//             text: 'Reglamentos',
+//             colorText: colorTextt,
+//             press: () {},
+//           ),
+//           const Spacer(),
+//           Padding(
+//             padding: const EdgeInsets.only(bottom: 30),
+//             child: Column(
+//               children: [
+//                 TextButton.icon(
+//                     onPressed: () {
+//                       Navigator.pop(context);
+//                     },
+//                     icon: const Icon(Icons.arrow_back, color: Colors.black),
+//                     label: const Text(
+//                       'Ir Hacia Atra',
+//                       style: TextStyle(color: Colors.black),
+//                     )),
+//                 Padding(
+//                   padding: const EdgeInsets.only(top: 2),
+//                   child: Text(
+//                     '@LuDeveloper',
+//                     style: TextStyle(
+//                       fontFamily: fontBalooPaaji,
+//                       fontSize: 11,
+//                       color: colorTextt,
+//                     ),
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
 // Expanded(
 //           child: Row(

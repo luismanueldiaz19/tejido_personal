@@ -1,5 +1,5 @@
 // const ipLocal = 'localhost';
-const ipLocal = '192.168.100.60';
+const ipLocal = 'localhost';
 // 3u6Q!-D4WvXu7u Token
 // LC!OU6)tJ0bbz
 // kYxgib-nicfa0-sesnib

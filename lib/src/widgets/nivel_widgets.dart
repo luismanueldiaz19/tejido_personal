@@ -6,7 +6,6 @@ import 'package:tejidos/src/datebase/url.dart';
 import 'package:tejidos/src/model/department.dart';
 import 'package:tejidos/src/nivel_2/folder_almacen/screen_almacen.dart';
 import 'package:tejidos/src/nivel_2/folder_bordado/bordado_orden_main/screen_bordado.dart';
-import 'package:tejidos/src/nivel_2/folder_confecion/screen_confecion.dart';
 import 'package:tejidos/src/nivel_2/folder_diseno/mode_diseno_direcion.dart';
 import 'package:tejidos/src/nivel_2/folder_printer/screen_model_printer.dart';
 import 'package:tejidos/src/nivel_2/folder_reception/screen_reception_entregas.dart';

@@ -15,6 +15,7 @@ import '../folder_cliente_company/add_cliente.dart';
 import '../folder_cuentas_por_cobrar_othe/screen_main_cuentas.dart';
 import '../folder_type_works/add_type_work.dart';
 import '../nivel_2/folder_actividades_foxin/screen_actividades.dart';
+import '../screens/my_account.dart';
 import '../widgets/button_menu_drawer.dart';
 
 class DrawerMenuCustom extends StatefulWidget {
@@ -52,12 +53,35 @@ class _DrawerMenuCustomState extends State<DrawerMenuCustom> {
                         BounceInDown(child: Image.asset(logoApp, height: 50))),
               ],
             ),
+
             const SizedBox(height: 15),
+            //MyAccount
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Text('Cuenta',
+                            textAlign: TextAlign.justify,
+                            style: style.bodySmall
+                                ?.copyWith(color: colorsBlueDeepHigh))
+                      ],
+                    ),
+                  ),
+                  MyWidgetButton(
+                      icon: Icons.settings_outlined,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (conext) => const MyAccount()),
+                        );
+                      },
+                      textButton: 'Mi Cuenta'),
                   Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Row(

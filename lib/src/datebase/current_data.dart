@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:tejidos/src/model/users.dart';
 
+import '../model/new_usuario.dart';
+
 String appTOKEN = "SMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
-Users? currentUsers;
+Users? currentUsers = Users();
+NewUsers userLogged = NewUsers();
 DateTime? dateActual = DateTime.now();
 
 const versionApp = 2;
